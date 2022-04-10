@@ -18,7 +18,7 @@ public class Exit {
     private static final float PAYCO_DISCOUNT_RATE = 0.1F;
     private ParkingTicket usedTicket;
     private boolean isTicketUse = false;
-    Clock clock;
+    private Clock clock;
 
     public void pay(Car car, LocalDateTime entranceTime) {
         User user = car.getUser();
@@ -87,7 +87,7 @@ public class Exit {
         throw new IllegalArgumentException("Calculate Failure: ParkingTime is over 2 days");
     }
 
-    public int basicCharge(long duration) {
+    private int basicCharge(long duration) {
         int parkingFee = 0;
         if(duration <= FREE_DURATION) {
             return parkingFee;
@@ -96,7 +96,7 @@ public class Exit {
         return parkingFee;
     }
 
-    public int firstExtraCharge(long duration) {
+    private int firstExtraCharge(long duration) {
         int parkingFee = 0;
         parkingFee += EXTRA_CHARGE_UNIT * (duration / EXTRA_TIME_UNIT);
         if(duration % EXTRA_TIME_UNIT > 0) {
@@ -108,7 +108,7 @@ public class Exit {
         return parkingFee;
     }
 
-    public int nextExtraCharge(long duration) {
+    private int nextExtraCharge(long duration) {
         int parkingFee = 0;
         parkingFee += EXTRA_CHARGE_UNIT * (duration / EXTRA_TIME_UNIT);
         if(duration % EXTRA_TIME_UNIT > 0) {

@@ -7,9 +7,9 @@ import com.nhnacademy.parkingcontrolsystem.customer.User;
 import java.time.LocalDateTime;
 
 public class Entrance {
-    Car car;
-    Clock clock;
-    LocalDateTime entranceTime;
+    private Car car;
+    private Clock clock;
+    private LocalDateTime entranceTime;
 
     public void carScan(Car car) {
         if(car.getCarNumber() == null) {

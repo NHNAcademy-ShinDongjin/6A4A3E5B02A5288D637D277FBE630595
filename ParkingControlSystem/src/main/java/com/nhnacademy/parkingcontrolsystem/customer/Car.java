@@ -1,9 +1,9 @@
 package com.nhnacademy.parkingcontrolsystem.customer;
 
 public class Car {
-    String carNumber;
-    CarType carType;
-    User user;
+    private final String carNumber;
+    private final CarType carType;
+    private final User user;
 
     public Car(String carNumber, CarType carType, User user) {
         this.carNumber = carNumber;
