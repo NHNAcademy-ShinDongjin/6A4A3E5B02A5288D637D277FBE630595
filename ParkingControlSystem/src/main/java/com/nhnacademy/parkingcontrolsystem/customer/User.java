@@ -1,13 +1,15 @@
 package com.nhnacademy.parkingcontrolsystem.customer;
 
 import com.nhnacademy.parkingcontrolsystem.parkingsystem.ParkingTicket;
+import com.nhnacademy.parkingcontrolsystem.parkingsystem.Server;
 import java.util.Map;
 
 public class User {
-    private final String userId;
-    private int money;
-    private boolean identification;
-    private Map<ParkingTicket, Integer> tickets;
+    Server server = new Server();
+    String userId;
+    int money;
+    boolean identification;
+    Map<ParkingTicket, Integer> tickets;
 
     public User(String userId, int money) {
         if(userId == null) {
